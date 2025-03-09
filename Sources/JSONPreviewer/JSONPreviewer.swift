@@ -49,7 +49,7 @@ public struct JSONPreviewView<T: Codable>: View {
     }
 
     // ✅ Декодирование JSON и возврат ошибки по конкретному полю
-    public static func parseJSON<T: Codable>(_ jsonString: String, modelType: T.Type) -> (T?, String?) {
+    public static func parseJSON(_ jsonString: String, modelType: T.Type) -> (T?, String?) {
         guard let data = jsonString.data(using: .utf8) else {
             return (nil, "Cannot convert string to Data")
         }
